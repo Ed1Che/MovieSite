@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Poster Gallery</title>
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="movie">
+            <img src="/static/8miles.jpg" alt="8 Miles">
+            <div class="movie-info">
+                <h2>8 Miles</h2>
+                <p>A poor white kid from Detroit struggles to rise above poverty and a broken home in 8 Mile, an obscenity-strewn Rocky for the gangsta rap generation. It stars controversial artist Eminem as Rabbit, a polite, hard worker with a gift of rhyme. He's a loyal pal.</p>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="/static/CREED.jpg" alt="CREED">
+            <div class="movie-info">
+                <h2>Creed</h2>
+                <p>Adonis Johnson (Michael B. Jordan) never knew his famous father, boxing champion Apollo Creed, who died before Adonis was born. However, boxing is in his blood, so he seeks out Rocky Balboa (Sylvester Stallone) and asks the retired champ to be his trainer.</p>
+            </div>
+        </div>
+    
+    </div>
+
+    <button onclick="redirectToPage()">Make Movie Suggestion</button>
+    <button onclick="redirectToSuggestions()">Suggestions We are working on</button>
+
+    <script>
+        function redirectToPage() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/suggest/';
+        }
+        function redirectToSuggestions() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/movies_list/';
+        }
+    </script>
+</body>
+
+</html>

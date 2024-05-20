@@ -1,0 +1,41 @@
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url("homebg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    form {
+        border: 2px solid rgb(28, 17, 17);
+        border-radius: 5px;
+        border-style: dotted;
+        border-width: thick
+    
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+       
+    }
+   
+    textarea {
+        width: 90%;
+        height: 200%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    .column {
+         float: left;
+        width: 50%;
+    }
+
+/* Clear floats after the columns */
+    .row:after {
+         content: "";
+         display: table;
+          clear: both;
+    }
+
+    h1{
+     color: rgb(235, 244, 244);
+    }

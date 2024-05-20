@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Recommendation</title>
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="movie">
+            <img src="/static/TITANIC.jpg" alt="TITANIC">
+            <div class="movie-info">
+                <h2>Titanic</h2>
+                <p>Titanic is a 1997 American romantic disaster film directed, written, produced, and co-edited by James Cameron. Incorporating both historical and fictionalized aspects, it is based on accounts of the sinking of RMS Titanic in 1912.</p>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="/static/beforesunrise.jpg" alt="Before Sunrise">
+            <div class="movie-info">
+                <h2>Before Sunrise</h2>
+                <p>A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together. A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna.</p>
+            </div>
+        </div>
+        <!-- Add more movie entries as needed -->
+    </div>
+
+    <button onclick="redirectToPage()">Make Movie Suggestion</button>
+    <button onclick="redirectToSuggestions()">Suggestions We are working on</button>
+
+    <script>
+        function redirectToPage() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/suggest/';
+        }
+        function redirectToSuggestions() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/movies_list/';
+        }
+    </script>
+</body>
+
+</html>

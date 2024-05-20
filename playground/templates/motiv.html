@@ -1,0 +1,49 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motiv Recommendation</title>
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="movie">
+            <img src="/static/BABYDRIVER.jpg" alt="BD">
+            <div class="movie-info">
+                <h2>Baby Driver</h2>
+                <p>Written and directed by Edgar Wright, Baby Driver is a formulaic heist film with a very intrusive soundtrack. The story follows a driver who's indebted to a crime boss who forces him to be the wheelman for his jobs, but eventually he gets pushed too far.</p>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="/static/THE GF.jpg" alt="TGF">
+            <div class="movie-info">
+                <h2>The Godfather</h2>
+                <p>The Godfather is set in the 1940s and takes place entirely within the world of the Corleones, a fictional New York Mafia family. It opens inside the dark office of the family patriarch, Don Vito Corleone (also known as the Godfather and played by Brando), on the wedding day of his daughter, Connie (Talia Shire)</p>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="/static/THE WWS.jpg" alt="TWWS">
+            <div class="movie-info">
+                <h2>The Wolf of Wallstreet</h2>
+                <p>The Wolf of Wall Street by Jordan Belfort is a gripping memoir that chronicles the author's rise and fall as a stockbroker on Wall Street. It offers a firsthand account of the excesses and ethical compromises in the financial world.</p>
+            </div>
+        </div>
+    </div>
+    <button onclick="redirectToPage()">Make Movie Suggestion</button>
+    <button onclick="redirectToSuggestions()">Suggestions We are working on</button>
+
+    <script>
+        function redirectToPage() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/suggest/';
+        }
+        function redirectToSuggestions() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/movies_list/';
+        }
+    </script>
+</body>
+
+</html>

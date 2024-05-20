@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home page</title>
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+<form id="quoteForm" class="row">
+    <div class="column">
+    <label style = " color: rgb(235, 244, 244)"for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="genre">Choose a Genre:</label>
+    <fieldset>
+        <legend>Genre :</legend> 
+            <input type="radio"   name ="genre" value="motivational">
+            <label for="motivational">motivational</label><br>
+            <input type="radio" name ="genre"  value="inspirational">
+            <label for="inspirational">inspirational</label><br>
+            <input type="radio"   name ="genre"  value="funny">
+            <label for="funny">funny</label><br>
+            <input type="radio"   name ="genre"  value="love">
+            <label for="love">love</label><br>
+    </fieldset>
+    <br>
+    <button id="Recommendation"> Get Movie Recommendation</button>
+    </div>
+    <div class="column">
+    <br>
+    <h1>Quote Generator</h1>    
+    <fieldset>
+        <legend>Optional :</legend> 
+            <textarea id="quoteOutput"></textarea>
+             <br>
+            <input type="submit" value="Generate Quote">
+    </fieldset>
+    </div>
+
+</form>
+    
+
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function(event) {
+    // Prevent form submission
+    event.preventDefault();
+    
+    // Get user input
+    var name = document.getElementById("name").value;
+    var genre = document.querySelector('input[name="genre"]:checked').value;
+    
+    // Generate quote based on genre
+    var quotes = {
+        "motivational": ["The only way to do great work is to love what you do. - Steve Jobs", "Believe you can and you're halfway there. - Theodore Roosevelt"],
+        "inspirational": ["The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt", "You are never too old to set another goal or to dream a new dream. - C.S. Lewis"],
+        "funny": ["I'm not lazy, I'm just on energy-saving mode. - Unknown", "I told my wife she was drawing her eyebrows too high. She looked surprised. - Unknown"],
+        "love": ["I have waited for this opportunity for more than half a century, to repeat to you once again my vow of eternal fidelity and everlasting love. - Gabriel Garcia Marquez", "I love you not only for what you are, but for what I am when I am with you. - Elizabeth Barrett Browning"]
+    };
+    
+    var randomIndex = Math.floor(Math.random() * quotes[genre].length);
+    var quote = quotes[genre][randomIndex];
+    
+    // Display the generated quote
+    document.getElementById("quoteOutput").innerHTML = "Hello, " + name + "! Here's your " + genre + " quote: " + quote + "";
+});
+
+document.getElementById('Recommendation').addEventListener('click', function(event) {
+    // Prevent form submission
+    event.preventDefault();
+    
+    var genre = document.querySelector('input[name="genre"]:checked').value;
+
+    function redirect(){
+        if (genre == 'motivational'){
+            window.location.href = 'http://127.0.0.1:8000/Motiv/';
+        } else if (genre == 'inspirational') {
+            window.location.href = 'http://127.0.0.1:8000/Inspir/';
+        } else if (genre == 'funny') {
+            window.location.href = 'http://127.0.0.1:8000/Funny/';
+        } else if (genre == 'love') {
+            window.location.href = 'http://127.0.0.1:8000/Love/';
+        }
+    }
+
+    redirect();
+});
+</script>
+
+</body>
+</html>

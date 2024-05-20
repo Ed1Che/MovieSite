@@ -1,0 +1,43 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Poster Gallery</title>
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="movie">
+            <img src="/static/FRIDAY.jpg" alt="FRIDAY">
+            <div class="movie-info">
+                <h2>Friday</h2>
+                <p>Craig Jones (Ice Cube) and Smokey (Chris Tucker) are two guys in Los Angeles, California hanging out on their porch on a Friday afternoon, smoking and looking for something to do. Encounters with neighbors and other friends over the course of the day and night, and their ensuing antics, make up the rest of the movie.</p>
+            </div>
+        </div>
+        <div class="movie">
+            <img src="/static/PROJECTX.jpg" alt="PROJECTX">
+            <div class="movie-info">
+                <h2>PROJECTX</h2>
+                <p>Project X is an American comedy movie from 2012. It was directed by Nima Nourizadeh and written by Michael Bacall and Matt Drake. The story is about three teenagers—Thomas, Costa and J. B.—who plan to gain popularity by throwing a party. Their plan quickly gets out of their control.</p>
+            </div>
+        </div>
+        <!-- Add more movie entries as needed -->
+    </div>
+    <button onclick="redirectToPage()">Make Movie Suggestion</button>
+    <button onclick="redirectToSuggestions()">Suggestions We are working on</button>
+
+    <script>
+        function redirectToPage() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/suggest/';
+        }
+        function redirectToSuggestions() {
+            // Replace 'destination_page.html' with the URL of the page you want to redirect to
+            window.location.href = 'http://127.0.0.1:8000/movies_list/';
+        }
+    </script>
+</body>
+
+</html>
